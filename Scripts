@@ -1,0 +1,84 @@
+// scripts.js — минимальный JS: навигация, формы, lightbox, год в футере
+document.addEventListener('DOMContentLoaded', function () {
+  // Year in footer (multiple spans)
+  const years = document.querySelectorAll('[id^="currentYear"]');
+  years.forEach(el => el.textContent = new Date().getFullYear());
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const primaryMenu = document.getElementById('primaryMenu');
+  if (navToggle && primaryMenu) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      primaryMenu.style.display = expanded ? 'none' : 'flex';
+    });
+  }
+
+  // Simple lightbox for gallery
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const closeBtn = document.querySelector('.lb-close');
+
+  function openLightbox(src, caption) {
+    lbImg.src = src;
+    lbImg.alt = caption || '';
+    lbCaption.textContent = caption || '';
+    lightbox.style.display = 'flex';
+    lightbox.setAttribute('aria-hidden', 'false');
+    closeBtn.focus();
+  }
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      openLightbox(item.dataset.large, item.querySelector('figcaption')?.textContent || '');
+    });
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(item.dataset.large, item.querySelector('figcaption')?.textContent || '');
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
+  // Basic client-side form handling (no backend) — here we simply validate and show a message.
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      // Prepare payload (if you later add backend, send here)
+      const data = new FormData(form);
+      const payload = Object.fromEntries(data.entries());
+      // For now — open user's mail client as fallback using mailto (easy, predictable)
+      const subject = encodeURIComponent('Заявка с сайта — ' + (payload.company || payload.name || ''));
+      const body = encodeURIComponent(
+        `Имя: ${payload.name}\nКомпания: ${payload.company || '-'}\nТелефон: ${payload.phone}\nEmail: ${payload.email}\n\nСообщение:\n${payload.message || '-'}`
+      );
+      window.location.href = `mailto:info@inexfacades.com?subject=${subject}&body=${body}`;
+      // Optionally show a polite message (uncomment if desired)
+      // alert('Спасибо! Форма отправлена. Мы свяжемся с вами в ближайшее время.');
+    });
+  }
+});
