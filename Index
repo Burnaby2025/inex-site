@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INEX Facades — Современные фасады и облицовка</title>
+  <meta name="description" content="Проектирование, производство и монтаж вентилируемых фасадов, композитных панелей и фасадных систем. Профессионально, надёжно, эстетично." />
+  <link rel="icon" href="assets/logo.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="INEX Facades — На главную">
+        <!-- Simple SVG logo -->
+        <img src="assets/logo.svg" alt="INEX Facades logo" width="140" />
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryMenu">Меню</button>
+        <ul id="primaryMenu" class="nav-list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="products.html">Продукты</a></li>
+          <li><a href="cases.html">Кейсы</a></li>
+          <li><a href="contact.html" class="cta">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Главный баннер">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Фасады, которые работают</h1>
+          <p class="lead">Проектирование, производство и монтаж вентилируемых фасадов и композитных систем — профессионально, эстетично, надёжно.</p>
+          <p class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Запросить смету</a>
+            <a class="btn btn-secondary" href="cases.html">Наши проекты</a>
+          </p>
+          <ul class="quick-logos" aria-hidden="true">
+            <li>CE</li><li>ISO</li><li>10 лет гарантии</li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/hero.jpg" alt="Пример фасада — проект" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Key benefits -->
+    <section class="features container" aria-label="Преимущества">
+      <ul class="features-grid">
+        <li>
+          <h3>Инженерия</h3>
+          <p>От проектирования до монтажа — полный инжиниринг фасадных решений.</p>
+        </li>
+        <li>
+          <h3>Материалы</h3>
+          <p>Качество сертифицированных материалов и строгий контроль производства.</p>
+        </li>
+        <li>
+          <h3>Срочность</h3>
+          <p>Оптимизированные сроки без потери качества и внимания к деталям.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Products teaser -->
+    <section class="products-teaser" aria-label="Продукты">
+      <div class="container">
+        <div class="teaser-head">
+          <h2>Продукты и системы</h2>
+          <p>Композитные панели, крепежные системы, вентилируемые фасады — решения под задачи.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <img src="assets/project-1.jpg" alt="Композитные панели" loading="lazy" />
+            <h4>Композитные панели</h4>
+            <p>Лёгкие, прочные и эстетичные панели для фасадов любого типа.</p>
+            <a class="link" href="products.html#composite">Подробнее →</a>
+          </article>
+
+          <article class="card">
+            <img src="assets/project-1.jpg" alt="Вентилируемые фасады" loading="lazy" />
+            <h4>Вентилируемые фасады</h4>
+            <p>Энергоэффективные фасады с учётом климата и архитектурных требований.</p>
+            <a class="link" href="products.html#ventilated">Подробнее →</a>
+          </article>
+
+          <article class="card">
+            <img src="assets/project-1.jpg" alt="Крепежные системы" loading="lazy" />
+            <h4>Крепеж и аксессуары</h4>
+            <p>Надёжные решения для быстрого и безопасного монтажа.</p>
+            <a class="link" href="products.html#accessories">Подробнее →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case slider (simple) -->
+    <section class="cases container" aria-label="Кейсы">
+      <h2>Избранные проекты</h2>
+      <div class="cases-grid">
+        <figure class="case">
+          <img src="assets/project-1.jpg" alt="Торговый центр — фасад" loading="lazy" />
+          <figcaption>
+            <strong>Торговый центр «Альфа»</strong>
+            <span>Коммерческий фасад, композитные панели</span>
+          </figcaption>
+        </figure>
+
+        <figure class="case">
+          <img src="assets/project-1.jpg" alt="Жилой комплекс — фасад" loading="lazy" />
+          <figcaption>
+            <strong>Жилой квартал «Лесной»</strong>
+            <span>Вентилируемая система, цветной фиброцемент</span>
+          </figcaption>
+        </figure>
+
+        <figure class="case">
+          <img src="assets/project-1.jpg" alt="Бизнес-центр — фасад" loading="lazy" />
+          <figcaption>
+            <strong>БЦ «Квадро»</strong>
+            <span>Алюминиевые композитные панели, бесшовный монтаж</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="more-link"><a href="cases.html">Показать все проекты →</a></p>
+    </section>
+
+    <!-- CTA strip -->
+    <section class="cta-strip" aria-label="Призыв к действию">
+      <div class="container">
+        <h2>Готовы обсудить проект?</h2>
+        <p>Оставьте заявку — мы подготовим предварительную смету в течение 48 часов.</p>
+        <a class="btn btn-primary" href="contact.html">Оставить заявку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo.svg" alt="INEX logo" width="120" />
+        <p>© <span id="currentYear"></span> INEX Facades — все права защищены</p>
+      </div>
+
+      <div>
+        <h4>Контакты</h4>
+        <p>Тел: <a href="tel:+74951234567">+7 (495) 123-45-67</a><br/>
+        Почта: <a href="mailto:info@inexfacades.com">info@inexfacades.com</a></p>
+      </div>
+
+      <div>
+        <h4>Адрес</h4>
+        <p>Москва, ул. Примерная, д.10</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>  
